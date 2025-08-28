@@ -1,0 +1,12 @@
+flask
+flask-wtf
+werkzeug
+python-dotenv
+numpy==1.26.4
+opencv-contrib-python-headless==4.8.1.78
+pandas==2.2.2
+matplotlib==3.8.4
+plotly
+flask-cors
+gunicorn
+opencv-python==4.9.0.80

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Annotate – {{ job_id }}</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Step 2: 設定比例尺 & ROI</h2>
+    <ol>
+      <li>輸入比例尺長度（公分）。</li>
+      <li>在下方影像點兩點（紅點）作比例尺。</li>
+      <li>拖曳滑鼠畫出 ROI（藍框）。</li>
+      <li>按下「Start Processing」。</li>
+    </ol>
+
+    <label>比例尺長度（公分）：<input id="scale_cm" type="number" step="0.01" min="0.01" value="10"/></label>
+
+    <div class="stage">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="actions">
+      <button id="resetBtn">Reset</button>
+      <button id="processBtn">Start Processing</button>
+    </div>
+
+    <div id="result" class="result hidden"></div>
+  </div>
+
+  <script>
+    const JOB_ID = {{ job_id|tojson }};
+    const IMG_URL = {{ img_url|tojson }};
+  </script>
+  <script src="/static/annotator.js"></script>
+</body>
+</html>
